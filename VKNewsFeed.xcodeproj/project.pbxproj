@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE09663E25448A30008FB821 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F075CD2F221DD90A001CA654 /* VKSdkFramework.framework */; };
+		EE09663F25448A30008FB821 /* VKSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F075CD2F221DD90A001CA654 /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F010388C224BBAA20054291A /* NewsfeedCellLayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010388B224BBAA20054291A /* NewsfeedCellLayoutCalculator.swift */; };
 		F0103890224D5F880054291A /* String + Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010388F224D5F880054291A /* String + Height.swift */; };
 		F011F2CE2250E7BF00D22B9D /* NewsfeedCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F011F2CD2250E7BF00D22B9D /* NewsfeedCodeCell.swift */; };
@@ -22,7 +24,6 @@
 		F075CD1D221DBC2A001CA654 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F075CD1C221DBC2A001CA654 /* AppDelegate.swift */; };
 		F075CD24221DBC2B001CA654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F075CD23221DBC2B001CA654 /* Assets.xcassets */; };
 		F075CD27221DBC2B001CA654 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F075CD25221DBC2B001CA654 /* LaunchScreen.storyboard */; };
-		F075CD30221DD90A001CA654 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F075CD2F221DD90A001CA654 /* VKSdkFramework.framework */; };
 		F075CD9B22207644001CA654 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F075CD9A22207644001CA654 /* AuthService.swift */; };
 		F075CD9E222086EC001CA654 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F075CD9D222086EC001CA654 /* AuthViewController.swift */; };
 		F075CDA022208713001CA654 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F075CD9F22208713001CA654 /* AuthViewController.storyboard */; };
@@ -44,6 +45,20 @@
 		F0A590932255295E00AE5600 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A590922255295E00AE5600 /* GalleryCollectionViewCell.swift */; };
 		F0CDC2542246A4A3006CC6AB /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CDC2532246A4A3006CC6AB /* WebImageView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EE09664025448A30008FB821 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EE09663F25448A30008FB821 /* VKSdkFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F010388B224BBAA20054291A /* NewsfeedCellLayoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedCellLayoutCalculator.swift; sourceTree = "<group>"; };
@@ -91,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F075CD30221DD90A001CA654 /* VKSdkFramework.framework in Frameworks */,
+				EE09663E25448A30008FB821 /* VKSdkFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +271,7 @@
 				F075CD15221DBC2A001CA654 /* Sources */,
 				F075CD16221DBC2A001CA654 /* Frameworks */,
 				F075CD17221DBC2A001CA654 /* Resources */,
-				F075CD32221DDB3D001CA654 /* ShellScript */,
+				EE09664025448A30008FB821 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,27 +331,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		F075CD32221DDB3D001CA654 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/VKSdkFramework.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F075CD15221DBC2A001CA654 /* Sources */ = {

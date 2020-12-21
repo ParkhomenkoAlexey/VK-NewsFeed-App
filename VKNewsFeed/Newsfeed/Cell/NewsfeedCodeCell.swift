@@ -52,12 +52,13 @@ final class NewsfeedCodeCell: UITableViewCell {
     }()
     
     let moreTextButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton(type: .system)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         button.setTitleColor(#colorLiteral(red: 0.4012392163, green: 0.6231879592, blue: 0.8316264749, alpha: 1), for: .normal)
         button.contentHorizontalAlignment = .left
         button.contentVerticalAlignment = .center
         button.setTitle("Показать полностью...", for: .normal)
+        button.addTarget(self, action: #selector(moreTextButtonTouch), for: .touchUpInside)
         return button
     }()
     
@@ -208,7 +209,7 @@ final class NewsfeedCodeCell: UITableViewCell {
         cardView.layer.cornerRadius = 10
         cardView.clipsToBounds = true
         
-        moreTextButton.addTarget(self, action: #selector(moreTextButtonTouch), for: .touchUpInside)
+        
         
         overlayFirstLayer() // первый слой
         overlaySecondLayer() // второй слой
@@ -218,6 +219,7 @@ final class NewsfeedCodeCell: UITableViewCell {
     }
     
     @objc func moreTextButtonTouch() {
+        print("1")
         delegate?.revealPost(for: self)
     }
     
