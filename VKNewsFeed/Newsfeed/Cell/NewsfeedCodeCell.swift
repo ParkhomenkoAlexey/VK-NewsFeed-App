@@ -19,6 +19,8 @@ final class NewsfeedCodeCell: UITableViewCell {
     
     weak var delegate: NewsfeedCodeCellDelegate?
     
+    // MARK: - Setup Properties
+    
     // Первый слой
     
     let cardView: UIView = {
@@ -58,7 +60,6 @@ final class NewsfeedCodeCell: UITableViewCell {
         button.contentHorizontalAlignment = .left
         button.contentVerticalAlignment = .center
         button.setTitle("Показать полностью...", for: .normal)
-        button.addTarget(self, action: #selector(moreTextButtonTouch), for: .touchUpInside)
         return button
     }()
     
@@ -192,6 +193,8 @@ final class NewsfeedCodeCell: UITableViewCell {
         return label
     }()
     
+    // MARK: - Init
+    
     override func prepareForReuse() {
         iconImageView.set(imageURL: nil)
         postImageView.set(imageURL: nil)
@@ -209,7 +212,7 @@ final class NewsfeedCodeCell: UITableViewCell {
         cardView.layer.cornerRadius = 10
         cardView.clipsToBounds = true
         
-        
+        moreTextButton.addTarget(self, action: #selector(moreTextButtonTouch), for: .touchUpInside)
         
         overlayFirstLayer() // первый слой
         overlaySecondLayer() // второй слой
@@ -378,7 +381,24 @@ final class NewsfeedCodeCell: UITableViewCell {
         // не нужно, так как размеры задаются динамически
     }
     
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        print(#function)
+    }
+    
      private func overlayFirstLayer() {
+        
+//        contentView.addSubview(cardView)
+//
+//        NSLayoutConstraint.activate([
+//            cardView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.cardInsets.top),
+//            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.cardInsets.left),
+//            cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.cardInsets.right),
+//            cardView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -Constants.cardInsets.bottom)
+//        ])
+        
+        contentView.backgroundColor = .clear
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        cardView.addGestureRecognizer(tap)
         addSubview(cardView)
         
         // cardView constraints
